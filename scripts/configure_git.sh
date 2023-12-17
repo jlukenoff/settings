@@ -4,6 +4,7 @@ EMAIL="${EMAIL:-'jlukenoff@gmail.com'}"
 
 git config --global init.defaultBranch main
 git config --global user.email "$EMAIL"
+git config --global core.editor vim
 
 
 echo "

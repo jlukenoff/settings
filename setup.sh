@@ -2,8 +2,6 @@
 
 set -e
 
-echo "running latest version of the script"
-
 target_dir="$HOME/.jlukenoff-custom-settings"
 
 clone_or_update_repo() {

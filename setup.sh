@@ -15,6 +15,8 @@ if [ -x "$(command -v apt)" ]; then
 
     clone_repo
 
+    echo "$target_dir"
+
     # Run the setup script for debian
     "$target_dir"/scripts/setup_debian_machine.sh
 fi

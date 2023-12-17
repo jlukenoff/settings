@@ -3,7 +3,10 @@ git config --global init.defaultBranch main
 git config --global user.email "$EMAIL"
 
 
-echo "The next steps will generate an ssh key to let us authenticate with git over ssh. Following the prompts and past the output into github at https://github.com/settings/ssh/new"
+echo "
+The next steps will generate an ssh key to let us authenticate with git over ssh.
+Following the prompts and past the output into github at https://github.com/settings/ssh/new
+"
 
 if [ ! -e ~/.ssh/id_ed25519 ]; then
     ssh-keygen -t ed25519 -C "$EMAIL"

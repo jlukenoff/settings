@@ -14,9 +14,10 @@ clone_or_update_repo() {
     fi
 }
 
+
 # Detect if we're running on a debian linux system (e.g. does apt exist?)
 if [ -x "$(command -v apt)" ]; then
-    apt install -y git
+    sudo apt install git -y
 
     clone_or_update_repo
 

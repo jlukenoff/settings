@@ -35,8 +35,8 @@ else
 fi
 
 # Set the path to the aliases file
-zsh_extras_path=$DIR/../config/zshrc
-zsh_aliases_path=$DIR/../config/aliases
+zsh_extras_path=$DIR/../configs/zshrc
+zsh_aliases_path=$DIR/../configs/aliases
 
 cat "$zsh_extras_path" >> ~/.zshrc
 cat "$zsh_aliases_path" >> ~/.zsh_aliases

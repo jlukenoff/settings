@@ -28,8 +28,12 @@ sudo sh -c "echo 'set-option -g default-shell /bin/zsh' >> /etc/tmux.conf"
 
 
 # Install a good vim config
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
+if [ -d ~/.vim_runtime ]; then
+    echo "vim_runtime already installed, skipping..."
+else
+    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+    sh ~/.vim_runtime/install_awesome_vimrc.sh
+fi
 
 # Set the path to the zshrc file
 zshrc_path=~/.zshrc

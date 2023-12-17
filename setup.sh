@@ -2,9 +2,13 @@
 
 target_dir="$HOME/.jlukenoff-custom-settings"
 
-clone_repo() {
-    if [ ! -d "$dest" ]; then
+clone_or_update_repo() {
+    if [ ! -d "$target_dir" ]; then
         git clone --depth=1 https://github.com/jlukenoff/settings-server.git "$target_dir"
+    else
+        echo "Repo already cloned, updating..."
+        cd "$target_dir"
+        git pull
     fi
 }
 
@@ -12,7 +16,7 @@ clone_repo() {
 if [ -x "$(command -v apt)" ]; then
     apt install -y git
 
-    clone_repo
+    clone_or_update_repo
 
     echo "$target_dir"
 

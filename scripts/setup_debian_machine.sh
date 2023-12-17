@@ -26,7 +26,6 @@ fi
 ## Make zsh the default for tmux
 sudo sh -c "echo 'set-option -g default-shell /bin/zsh' >> /etc/tmux.conf"
 
-
 # Install a good vim config
 if [ -d ~/.vim_runtime ]; then
     echo "vim_runtime already installed, skipping..."
@@ -35,14 +34,11 @@ else
     sh ~/.vim_runtime/install_awesome_vimrc.sh
 fi
 
-# Set the path to the zshrc file
-zshrc_path=~/.zshrc
-
 # Set the path to the aliases file
 zsh_extras_path=$DIR/../config/zshrc
 zsh_aliases_path=$DIR/../config/aliases
 
-cat "$zsh_extras_path" >> "$zshrc_path"
+cat "$zsh_extras_path" >> ~/.zshrc
 cat "$zsh_aliases_path" >> ~/.zsh_aliases
 
 chsh $(whoami) -s $(which zsh)

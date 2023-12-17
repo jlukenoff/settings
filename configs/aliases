@@ -12,6 +12,8 @@ alias gd='git diff'
 alias gl='git log'
 alias grl='git reflog'
 alias gcl='git clone'
+# Aliaes for squashing commits into a single commit
+alias gsf='git reset --soft HEAD~'
 alias gsq='git rebase -i HEAD~'
 
 alias nis='npm install --save'

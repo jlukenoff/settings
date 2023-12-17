@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ce
+set -e
 
 echo "running latest version of the script"
 

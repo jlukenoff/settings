@@ -24,3 +24,7 @@ curl -fsSL https://raw.githubusercontent.com/jlukenoff/settings/main/configs/ali
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/jlukenoff/settings/main/scripts/configure_git.sh)"
 ```
+
+
+// Test commit
+

@@ -6,4 +6,4 @@ shopt -s histappend
 dir=$(dirname "$(realpath "$0")")
 
 # Source our aliases
-source "$dir/aliases"
+. ~/.zsh_aliases

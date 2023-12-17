@@ -9,7 +9,7 @@ Following the prompts and past the output into github at https://github.com/sett
 "
 
 if [ ! -e ~/.ssh/id_ed25519 ]; then
-    ssh-keygen -t ed25519 -C "$EMAIL"
+    ssh-keygen -t ed25519 -C "${EMAIL:-'jlukenoff@gmail.com'}"
 fi
 
 github_ssh_conf="Host github.com

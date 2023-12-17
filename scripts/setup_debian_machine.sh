@@ -28,9 +28,10 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 zshrc_path=~/.zshrc
 
 # Set the path to the aliases file
-extra_zshrc_config_path=$DIR/../config/zshrc
+zsh_extras_path=$DIR/../config/zshrc
+zsh_aliases_path=$DIR/../config/aliases
 
-# Read the aliases file and append the aliases to the zshrc file
-cat "$extra_zshrc_config_path" >> "$zshrc_path"
+cat "$zsh_extras_path" >> "$zshrc_path"
+cat "$zsh_aliases_path" >> ~/.zsh_aliases
 
 /bin/zsh

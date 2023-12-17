@@ -17,10 +17,15 @@ sudo apt install -y \
     tree \
     zsh
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ ! -d ~/.oh-my-zsh]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "oh-my-zsh already installed, skipping..."
+fi
 
 ## Make zsh the default for tmux
 echo "set-option -g default-shell /bin/zsh" > /etc/tmux.conf
+
 
 # Install a good vim config
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime

@@ -18,3 +18,9 @@ curl -fsSL https://raw.githubusercontent.com/jlukenoff/settings-server/main/conf
 # Adjust permanently with in bash environment
 curl -fsSL https://raw.githubusercontent.com/jlukenoff/settings-server/main/configs/aliases >> ~/.bash_aliases
 ```
+
+# To set up a new git ssh key
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/jlukenoff/settings-server/main/scripts/configure_git.sh)"
+```

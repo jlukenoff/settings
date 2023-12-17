@@ -5,7 +5,12 @@ EMAIL="${EMAIL:-'jlukenoff@gmail.com'}"
 git config --global init.defaultBranch main
 git config --global user.email "$EMAIL"
 git config --global core.editor vim
+git config --global pull.rebase true
+git config --global push.default simple
 
+if [ "$1" != "--setup-ssh" ] && [ "$1" != "-S" ]; then
+    exit 0
+fi
 
 echo "
 The next steps will generate an ssh key to let us authenticate with git over ssh.

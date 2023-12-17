@@ -1,4 +1,7 @@
 #! /usr/bin/zsh
+
+EMAIL="${EMAIL:-'jlukenoff@gmail.com'}"
+
 git config --global init.defaultBranch main
 git config --global user.email "$EMAIL"
 
@@ -9,7 +12,7 @@ Following the prompts and past the output into github at https://github.com/sett
 "
 
 if [ ! -e ~/.ssh/id_ed25519 ]; then
-    ssh-keygen -t ed25519 -C "${EMAIL:-'jlukenoff@gmail.com'}"
+    ssh-keygen -t ed25519 -C "$EMAIL"
 fi
 
 github_ssh_conf="Host github.com

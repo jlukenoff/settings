@@ -3,7 +3,7 @@
 set -e
 
 # Get the local directory of this file
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$( dirname "$(realpath "$0")"
 
 apt-get update -y
 apt-get upgrade -y

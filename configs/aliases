@@ -12,6 +12,7 @@ alias gd='git diff'
 alias gl='git log'
 alias grl='git reflog'
 alias gcl='git clone'
+alias gsq='git rebase -i HEAD~'
 
 alias nis='npm install --save'
 alias nisd='npm install --save-dev'

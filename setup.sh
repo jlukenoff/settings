@@ -11,7 +11,7 @@ clone_repo() {
 
 # Detect if we're running on a debian linux system (e.g. does apt exist?)
 if [ -x "$(command -v apt)" ]; then
-    sudo apt install -y git
+    apt install -y git
 
     clone_repo
 

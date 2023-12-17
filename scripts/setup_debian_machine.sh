@@ -13,6 +13,8 @@ apt install -y \
     git \
     tmux \
     python3-pip \
+    fzf \
+    tree \
     zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

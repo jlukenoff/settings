@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -e
+set -ce
+
+echo "running latest version of the script"
 
 target_dir="$HOME/.jlukenoff-custom-settings"
 

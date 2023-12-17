@@ -1,13 +1,7 @@
 
-# Enable history
-setopt history_inc_append_history
-shopt -s histappend
 
 # Source our aliases
 . ~/.zsh_aliases
-
-# Source our env
-. ~/.zsh_env
 
 REPOS=~/repos
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"

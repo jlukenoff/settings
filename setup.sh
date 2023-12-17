@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # detect which os we're running on
-dir=$(dirname "$(realpath "$0")")
+target_dir="$HOME/.jlukenoff-custom-settings"
 
 clone_repo() {
     if [ ! -d "$dest" ]; then
-        git clone --depth=1 https://github.com/jlukenoff/settings-server.git ~/.settings-server
+        git clone --depth=1 https://github.com/jlukenoff/settings-server.git "$target_dir"
     fi
 }
 
@@ -13,7 +13,9 @@ clone_repo() {
 if [ -x "$(command -v apt)" ]; then
     sudo apt install -y git
 
+    clone_repo
+
     # Run the setup script for debian
-    "${dir}/scripts/setup_debian_machine.sh"
+    "$dir"/scripts/setup_debian_machine.sh
 fi
 

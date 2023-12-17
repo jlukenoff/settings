@@ -41,4 +41,6 @@ zsh_aliases_path=$DIR/../config/aliases
 cat "$zsh_extras_path" >> "$zshrc_path"
 cat "$zsh_aliases_path" >> ~/.zsh_aliases
 
+chsh $(whoami) -s $(which zsh)
+
 /bin/zsh

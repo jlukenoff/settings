@@ -56,7 +56,13 @@ else
     echo "ZSH aliases already present in ~/.zshrc"
 fi
 
-chsh $(whoami) -s $(which zsh)
+# Check if the default shell is already set to zsh before changing
+if [ "$SHELL" != "/bin/zsh" ]; then
+    echo "Changing default shell to zsh"
+    chsh $(whoami) -s $(which zsh)
+else
+    echo "Default shell already set to zsh"
+fi
 
 $DIR/configure_git.sh
 

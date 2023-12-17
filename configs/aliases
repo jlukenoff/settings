@@ -21,4 +21,6 @@ alias ni='npm install'
 alias change='vim ~/.zshrc'
 alias use='source ~/.zshrc'
 
-alias repos='cd ~/${REPOS:-repos}'
+
+# An alias that cd's into the repo directory, which will either be in a $REPOS env var or will default to ~/repos
+alias repo='cd ${REPOS:-~/repos}'

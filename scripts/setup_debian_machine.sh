@@ -5,8 +5,8 @@ set -e
 # Get the local directory of this file
 DIR="$( dirname "$(realpath "$0") )"
 
-apt-get update -y
-apt-get upgrade -y
+apt update -y
+apt upgrade -y
 
 # Install some other useful tools
 apt install -y \

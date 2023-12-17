@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 target_dir="$HOME/.jlukenoff-custom-settings"
 
 clone_or_update_repo() {

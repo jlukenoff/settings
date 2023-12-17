@@ -20,3 +20,5 @@ alias ni='npm install'
 
 alias change='vim ~/.zshrc'
 alias use='source ~/.zshrc'
+
+alias repos='cd ~/${REPOS:-repos}'

@@ -3,7 +3,5 @@
 setopt history_inc_append_history
 shopt -s histappend
 
-dir=$(dirname "$(realpath "$0")")
-
 # Source our aliases
 . ~/.zsh_aliases

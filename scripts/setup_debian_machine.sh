@@ -5,11 +5,11 @@ set -e
 # Get the local directory of this file
 DIR="$( dirname "$(realpath "$0") )"
 
-apt update -y
-apt upgrade -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
 
 # Install some other useful tools
-apt install -y \
+sudo apt install -y \
     git \
     tmux \
     python3-pip \

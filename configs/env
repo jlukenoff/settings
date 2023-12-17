@@ -1,0 +1,4 @@
+REPOS=~/repos
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+EMAIL='jlukenoff@gmail.com'

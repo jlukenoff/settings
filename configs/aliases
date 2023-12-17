@@ -1,4 +1,4 @@
-
+# Useful aliases
 alias ga='git add'
 alias gaa='git add .'
 alias gcm='git commit -s -m'
@@ -10,12 +10,12 @@ alias gp='git push'
 alias gpl='git pull'
 alias gd='git diff'
 alias gl='git log'
+alias grl='git reflog'
 alias gcl='git clone'
 
 alias nis='npm install --save'
 alias nisd='npm install --save-dev'
 alias ni='npm install'
 
-alias use='source ~/.zshrc'
 alias change='vim ~/.zshrc'
-
+alias use='source ~/.zshrc'

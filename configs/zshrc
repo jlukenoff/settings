@@ -1,0 +1,8 @@
+# Enable history
+setopt history_inc_append_history
+shopt -s histappend
+
+dir=$(dirname "$(realpath "$0")")
+
+# Source another file
+source "$dir/aliases"

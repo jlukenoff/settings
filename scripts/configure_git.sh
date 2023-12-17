@@ -1,13 +1,12 @@
 #! /usr/bin/zsh
 git config --global init.defaultBranch main
-git config --global user.email "jlukenoff@gmail.com"
-git config --global user.name "John Lukenoff"
+git config --global user.email "$EMAIL"
 
 
 echo "The next steps will generate an ssh key to let us authenticate with git over ssh. Following the prompts and past the output into github at https://github.com/settings/ssh/new"
 
 if [ ! -e ~/.ssh/id_ed25519 ]; then
-    ssh-keygen -t ed25519 -C "jlukenoff@gmail.com"
+    ssh-keygen -t ed25519 -C "$EMAIL"
 fi
 
 github_ssh_conf="Host github.com
@@ -20,7 +19,7 @@ if [ ! -e "$config_file" ]; then
     touch "$config_file"
 fi
 
-if ! grep -qF "$text_to_add" "$config_file"; then
+if ! grep -qF "$github_ssh_conf" "$config_file"; then
     echo $github_ssh_conf >> "$config_file"
 else
     echo "Github ssh conf already present in ~/.ssh/config"

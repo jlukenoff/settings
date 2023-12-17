@@ -3,7 +3,7 @@
 set -e
 
 # Get the local directory of this file
-DIR="$( dirname "$(realpath "$0")"
+DIR="$( dirname "$(realpath "$0") )"
 
 apt-get update -y
 apt-get upgrade -y

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# detect which os we're running on
 target_dir="$HOME/.jlukenoff-custom-settings"
 
 clone_repo() {

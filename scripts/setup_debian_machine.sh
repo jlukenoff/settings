@@ -39,7 +39,21 @@ zsh_extras_path=$DIR/../configs/zshrc
 zsh_aliases_path=$DIR/../configs/aliases
 
 cat "$zsh_extras_path" >> ~/.zshrc
-cat "$zsh_aliases_path" >> ~/.zsh_aliases
+
+# check if ~/.zshrc already containts the contents of $zsh_aliases_path, if not, append it
+if ! grep -qF "$zsh_extras_path" ~/.zshrc; then
+    echo "source $zsh_extras_path" >> ~/.zshrc
+else
+    echo "ZSH extras already present in ~/.zshrc"
+fi
+
+if ! grep -qF "$zsh_aliases_path" ~/.zsh_aliases; then
+    echo "source $zsh_aliases_path" >> ~/.zsh_aliases
+else
+    echo "Aliases already present in ~/.zsh_aliases"
+fi
+
+
 
 chsh $(whoami) -s $(which zsh)
 

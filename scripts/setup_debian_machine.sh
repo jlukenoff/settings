@@ -43,5 +43,7 @@ cat "$zsh_aliases_path" >> ~/.zsh_aliases
 
 chsh $(whoami) -s $(which zsh)
 
+$DIR/configure_git.sh
+
 /bin/zsh
 

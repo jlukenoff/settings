@@ -17,12 +17,6 @@ sudo apt install -y \
     tree \
     zsh
 
-if [ ! -d ~/.oh-my-zsh ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-else
-    echo "oh-my-zsh already installed, skipping..."
-fi
-
 ## Make zsh the default for tmux
 set_tmux_default_shell="set-option -g default-shell /bin/zsh"
 if ! grep -qF "$set_tmux_default_shell" /etc/tmux.conf; then
@@ -31,13 +25,7 @@ else
     echo "Tmux default shell already set"
 fi
 
-# Install a good vim config
-if [ -d ~/.vim_runtime ]; then
-    echo "vim_runtime already installed, skipping..."
-else
-    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-    sh ~/.vim_runtime/install_awesome_vimrc.sh
-fi
+eval "$DIR/setup_vim.sh"
 
 # Set the path to the aliases file
 use_zsh_extras="source $DIR/../configs/zshrc"

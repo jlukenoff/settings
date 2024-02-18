@@ -9,6 +9,7 @@ git config --global pull.rebase true
 git config --global push.default simple
 
 if [ "$1" != "--setup-ssh" ] && [ "$1" != "-S" ]; then
+    echo "Configured default git configs"
     exit 0
 fi
 
@@ -18,10 +19,16 @@ Follow the prompts and paste the output into GitHub at https://github.com/settin
 "
 
 if [ ! -e ~/.ssh/id_ed25519 ]; then
-    ssh-keygen -t ed25519 -C "$EMAIL"
+    ssh-keygen -t ed25519 -C "$EMAIL" -f ~/.ssh/id_ed25519
 fi
 
-github_ssh_conf="Host github.com
+echo "
+Paste your current public key to github:
+$(cat ~/.ssh/id_ed25519.pub)
+"
+
+github_ssh_conf="
+Host github.com
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
 "

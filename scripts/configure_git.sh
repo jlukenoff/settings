@@ -1,6 +1,7 @@
 #! /usr/bin/zsh
 
-EMAIL="${EMAIL:-'jlukenoff@gmail.com'}"
+EMAIL="${EMAIL:'-jlukenoff@gmail.com'}"
+SSH_KEYFILE=~/.ssh/id_ed25519
 
 git config --global init.defaultBranch main
 git config --global user.email "$EMAIL"
@@ -18,19 +19,22 @@ The next steps will generate an ssh key to let us authenticate with git over ssh
 Follow the prompts and paste the output into GitHub at https://github.com/settings/ssh/new
 "
 
+
 if [ ! -e ~/.ssh/id_ed25519 ]; then
-    ssh-keygen -t ed25519 -C "$EMAIL" -f ~/.ssh/id_ed25519
+    ssh-keygen -t ed25519 -C "$EMAIL" -f "$SSH_KEYFILE"
+    eval "$(ssh-agent -s)"
+    ssh-add "$SSH_KEYFILE"
 fi
 
 echo "
 Paste your current public key to github:
-$(cat ~/.ssh/id_ed25519.pub)
+$(cat "$SSH_KEYFILE.pub")
 "
 
 github_ssh_conf="
 Host github.com
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile "$SSH_KEYFILE"
 "
 config_file="$HOME/.ssh/config"
 

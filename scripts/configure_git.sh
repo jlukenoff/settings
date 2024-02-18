@@ -14,11 +14,6 @@ if [ "$1" != "--setup-ssh" ] && [ "$1" != "-S" ]; then
     exit 0
 fi
 
-echo "
-The next steps will generate an ssh key to let us authenticate with git over ssh.
-Follow the prompts and paste the output into GitHub at https://github.com/settings/ssh/new
-"
-
 
 if [ ! -e ~/.ssh/id_ed25519 ]; then
     ssh-keygen -t ed25519 -C "$EMAIL" -f "$SSH_KEYFILE"
@@ -27,19 +22,23 @@ if [ ! -e ~/.ssh/id_ed25519 ]; then
 fi
 
 echo "
-Paste your current public key to github:
+Paste the following public key into github at https://github.com/settings/ssh/new
 $(cat "$SSH_KEYFILE.pub")
 "
 
 github_ssh_conf="
 Host github.com
-  AddKeysToAgent yes
-  IdentityFile "$SSH_KEYFILE"
+    AddKeysToAgent yes
+    IgnoreUnknown UseKeychain
+    UseKeychain yes
+    IdentityFile $SSH_KEYFILE
 "
 config_file="$HOME/.ssh/config"
 
 if [ ! -e "$config_file" ]; then
     touch "$config_file"
+    chmod 700 ~/.ssh
+    chmod 600 ~/.ssh/*
 fi
 
 if ! grep -qF "$github_ssh_conf" "$config_file"; then

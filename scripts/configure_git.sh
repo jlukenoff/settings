@@ -22,7 +22,7 @@ if [ ! -e ~/.ssh/id_ed25519 ]; then
 fi
 
 echo "
-Paste the following public key into github at https://github.com/settings/ssh/new
+Paste the following public key into github at https://github.com/settings/ssh/new:
 $(cat "$SSH_KEYFILE.pub")
 "
 
